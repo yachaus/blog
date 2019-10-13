@@ -1,0 +1,87 @@
+body {
+    margin-top: 60px;
+    background-color: #fde1b2;
+}
+
+.card {
+    margin: 10px 80px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.71);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+#add-form {
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    z-index: 1;
+}
+
+.toggle {
+    margin: 0;
+}
+
+.date {
+    float: right;
+}
+
+.alert-danger {
+    margin: 40px;
+}
+
+.one {
+    margin-top: 100px
+}
+
+.form-control {
+    background-color: rgba(190, 190, 190, 0.46)
+}
+
+.blockquote-footer {
+    color: #8e969d;
+}
+
+a {
+    color: #525252;
+}
+
+.slider {
+    margin: 0 80px;
+}
+
+.add-post {
+    width: 200px;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #5a6268;
+    border-color: rgba(0, 123, 255, 0);
+}
+
+.page-link {
+    color: #525252;
+}
+
+.alert-danger {
+    margin: 0px;
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.e404 {
+    font-size: 20rem;
+    position: fixed;
+    left: 25%;
+}
