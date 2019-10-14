@@ -1,15 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Classes;
 
 use App\Classes\Models\Post;
 
-/**
- * Функция, которая обрезает строку по словам
- * @param $maxlen int Максимальная длинна текста
- * @param $text string Текст, который нужно обрезать
- * @return string
- */
 class Method
 {
     public static function cutByWords($maxlen, $text)

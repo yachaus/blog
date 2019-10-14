@@ -4,8 +4,7 @@ namespace App\Classes\Controllers;
 
 use App\Classes\Models\Comment;
 use App\Classes\Models\Post;
-use App\Method;
-use App\MultiException;
+use App\Classes\Method;
 
 class Blog extends Base
 {
@@ -25,7 +24,7 @@ class Blog extends Base
     protected function actionPost()
     {
         $this->view['post'] = \App\Classes\Models\Post::findById($_GET['id']);
-        if (NULL == $this->view['post']) {
+        if (null == $this->view['post']) {
             throw new \App\Exceptions\E404();
         }
         $this->view['content'] = __DIR__ . '/../../templates/post.php';

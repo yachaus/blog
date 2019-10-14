@@ -16,7 +16,7 @@
                             <li class="list-group-item">
                                 <a href="/Blog/Post/?id=<?= $chart->id ?>">
                                     #<?= $chart->id ?>
-                                    <?= \App\Method::cutByWords(100, $chart->text) ?>
+                                    <?= \App\Classes\Method::cutByWords(100, $chart->text) ?>
                                 </a>
                                 <footer class="blockquote-footer">
                                     <?= $chart->author ?>
@@ -64,7 +64,7 @@ foreach ($posts as $post) :
     <div class="card p-3">
         <blockquote class="blockquote mb-0 card-body">
             <a href="/Blog/Post/?id=<?= $post->id ?>">
-                <p>#<?= $post->id ?> <?= \App\Method::cutByWords(100, $post->text) ?></p>
+                <p>#<?= $post->id ?> <?= \App\Classes\Method::cutByWords(100, $post->text) ?></p>
             </a>
             <footer class="blockquote-footer">
                 <?= $post->author ?>

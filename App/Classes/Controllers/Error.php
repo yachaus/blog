@@ -8,7 +8,7 @@ class Error extends Base
 {
     protected $message;
 
-    public function __construct(string $message = NULL)
+    public function __construct(string $message = null)
     {
         $this->message = $message;
         $this->view = new View();

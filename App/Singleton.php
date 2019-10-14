@@ -12,7 +12,7 @@ trait Singleton
 
     public static function instance()
     {
-        if (NULL === static::$instance) {
+        if (null === static::$instance) {
             static::$instance = new static;
         }
         return static::$instance;

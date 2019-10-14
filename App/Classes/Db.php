@@ -1,17 +1,22 @@
 <?php
 
-namespace App;
+namespace App\Classes;
+
+use App\Singleton;
 
 class Db
 {
-    use \App\Singleton;
+    use Singleton;
 
     protected $dbh;
 
     protected function __construct()
     {
+        $config = Config::instance();
         try {
-            $this->dbh = new \PDO('mysql:host=localhost; dbname=blog', 'root', 'root');
+            $this->dbh = new \PDO(
+                'mysql:host=' . $config->data['db']['host'] . '; dbname=' . $config->data['db']['dbname'],
+                $config->data['db']['username'], $config->data['db']['passwd']);
         } catch (\PDOException $e) {
             throw new \App\Exceptions\Db('Unable to connect to database!');
         }
@@ -28,7 +33,7 @@ class Db
         }
     }
 
-    public function query($sql, $class = NULL, $params = [])
+    public function query($sql, $class = null, $params = [])
     {
         try {
             $sth = $this->dbh->prepare($sql);

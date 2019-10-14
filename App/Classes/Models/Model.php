@@ -2,7 +2,7 @@
 
 namespace App\Classes\Models;
 
-use App\Db;
+use App\Classes\Db;
 
 abstract class Model
 {
@@ -22,7 +22,7 @@ abstract class Model
         if (isset($recordById[0])) {
             return $recordById[0];
         } else
-            return NULL;
+            return null;
     }
 
     public static function count()
@@ -45,7 +45,7 @@ abstract class Model
      * Метод, возвращающий все записи из базы данных, в виде обьекта
      * @return mixed
      */
-    public static function findAll($options = NULL)
+    public static function findAll($options = null)
     {
         $db = Db::instance();
         $res = $db->queryEach(

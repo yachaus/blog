@@ -43,15 +43,20 @@
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
 </div>
+<?php if (($post->comments)) : ?>
 <h3 style="margin: 0 80px;">Comments:</h3>
 <?php foreach ($post->comments as $comment) : ?>
-    <div class="card">
-        <div class="card-body">
-            <p><?= $comment->text ?></p>
-            <footer class="blockquote-footer">
-                <?= $comment->author ?>
-                <p class="date"><?= $comment->date ?></p>
-            </footer>
+        <div class="card">
+            <div class="card-body">
+                <p><?= $comment->text ?></p>
+                <footer class="blockquote-footer">
+                    <?= $comment->author ?>
+                    <p class="date"><?= $comment->date ?></p>
+                </footer>
+            </div>
         </div>
-    </div>
-<?php endforeach; ?>
+    <?php
+    endforeach;
+endif;
+?>
+
