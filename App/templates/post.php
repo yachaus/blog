@@ -17,18 +17,6 @@
         </footer>
     </blockquote>
 </div>
-<h3 style="margin: 0 80px;">Comments:</h3>
-<?php foreach ($post->comments as $comment) : ?>
-    <div class="card">
-        <div class="card-body">
-            <p><?= $comment->text ?></p>
-            <footer class="blockquote-footer">
-                <?= $comment->author ?>
-                <p class="date"><?= $comment->date ?></p>
-            </footer>
-        </div>
-    </div>
-<?php endforeach; ?>
 <div class="card p-3">
     <form method="post" action="/Blog/AddComment/?id=<?= $post->id ?>">
         <h3>Add Comment</h3>
@@ -55,3 +43,15 @@
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
 </div>
+<h3 style="margin: 0 80px;">Comments:</h3>
+<?php foreach ($post->comments as $comment) : ?>
+    <div class="card">
+        <div class="card-body">
+            <p><?= $comment->text ?></p>
+            <footer class="blockquote-footer">
+                <?= $comment->author ?>
+                <p class="date"><?= $comment->date ?></p>
+            </footer>
+        </div>
+    </div>
+<?php endforeach; ?>
