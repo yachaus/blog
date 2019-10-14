@@ -4,28 +4,21 @@ namespace App\Classes\Controllers;
 
 use App\Classes\Models\Comment;
 use App\Classes\Models\Post;
+use App\Method;
 use App\MultiException;
 
 class Blog extends Base
 {
     protected function actionShowAll()
     {
-        // pagination data
-        $num = 5;
-        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $posts = Post::count();
-        $total = intval(($posts - 1) / $num) + 1;
-        $page = intval($page);
-        if (empty($page) or $page < 0) $page = 1;
-        if ($page > $total) $page = $total;
-        $start = $page * $num - $num;
-        //
-
-        $this->view['page'] = $page;
-        $this->view['total'] = $total;
+        $pagination = Method::Pagination();
+        $this->view['page'] = $pagination['page'];
+        $this->view['total'] = $pagination['total'];
         $this->view['content'] = __DIR__ . '/../../templates/index.php';
         $this->view['charts'] = Post::getCharts();
-        $this->view['posts'] = Post::findAll('ORDER BY date DESC LIMIT ' . $start . ', ' . $num);
+        $this->view['posts'] = Post::findAll(
+            'ORDER BY date DESC LIMIT ' .
+            $pagination['start'] . ', ' . $pagination['num']);
         $this->view->display($this->layout);
     }
 
